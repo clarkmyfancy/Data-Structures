@@ -1,6 +1,6 @@
 import unittest
 from SinglyLinkedList import SinglyLinkedList
-from SinglyLinkedList import Node
+from Node import Node
 
 class TestSinglyLinkedList(unittest.TestCase):
 
@@ -13,12 +13,12 @@ class TestSinglyLinkedList(unittest.TestCase):
     def test_WhenAddedZeroItems_ListIsEmpty(self):
         self.assertEqual(0, self.List.count())
 
-    def test_AfterPush1Node_ListHas1Node(self):
+    def test_After1Push_ListHas1Node(self):
         n = Node()
         self.List.push(n)
         self.assertEqual(1, self.List.count())
     
-    def test_AfterPush2Nodes_ListHas2Nodes(self):
+    def test_After2Pushes_ListHas2Nodes(self):
         n1 = Node()
         n2 = Node()
         self.List.push(n1)
@@ -35,12 +35,12 @@ class TestSinglyLinkedList(unittest.TestCase):
         self.List.pop()
         self.assertEqual(0, self.List.count())
 
-    def test_AfterPush1Node_PrintsPrettily(self):
+    def test_After1Push_PrintsPrettily(self):
         n = Node(15)
         self.List.push(n)
         self.assertEqual("|15| ~", self.List.pretty_print())
 
-    def test_AfterPush2Nodes_PrintsPrettily(self):
+    def test_After2Pushes_PrintsPrettily(self):
         n0 = Node(12342342)
         n1 = Node(-123)
         self.List.push(n0)
